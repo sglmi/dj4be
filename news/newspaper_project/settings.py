@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Project apps
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
+    "articles.apps.ArticlesConfig",
     # 3rd party apps
     "crispy_forms",
 ]
@@ -127,10 +128,14 @@ STATIC_URL = "static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+# Django settings
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+# App settings
 AUTH_USER_MODEL = "users.CustomUser"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
+# 3rd party app settings
 CRISPY_TEMPLATE_PACK = "bootstrap4"
